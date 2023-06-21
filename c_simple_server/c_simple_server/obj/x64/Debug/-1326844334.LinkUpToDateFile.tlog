@@ -1,0 +1,1 @@
+g++ -o "/home/foryouos/projects/http/c_simple_server/bin/x64/Debug/c_simple_server.out" -Wl,--no-undefined -Wl,-z,relro -Wl,-z,now -Wl,-z,noexecstack /home/foryouos/projects/http/c_simple_server/obj/x64/Debug/main.o /home/foryouos/projects/http/c_simple_server/obj/x64/Debug/server.o -lpthread

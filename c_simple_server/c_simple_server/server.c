@@ -114,6 +114,7 @@ int epollRun(int lfd)
 				//recvHttpRequest(fd, epfd);
 
 				pthread_create(&info->tid, NULL, recvHttpRequest, info);
+				//TODO线程退出
 			}
 
 		}
@@ -163,7 +164,8 @@ void* recvHttpRequest(void* arg)
 	char tmp[1024] = { 0 }; //临时
 	//边缘模式，需要一次把所有数据全部读完
 	int len = 0, total = 0; //len每次接受的数据长度，total为总长度
-	while ((len = (int)recv(info->fd, tmp, sizeof tmp, 0)) > 0)
+	//将请求的数据全部存入缓存区当中
+	while ((len = (int)recv(info->fd, tmp, sizeof tmp, 0)) > 0) //接受客户端的请求数据
 	{
 		//printf("recv while total\n");
 		if (total + len < sizeof(buf))
@@ -171,18 +173,19 @@ void* recvHttpRequest(void* arg)
 			memcpy(buf + total, tmp, (size_t)len);  //修改复制地址
 		}
 		total += len;
-
 	}
-	printf("total = %d\n", total);
+	//printf("total = %d\n", total);
 	//判断数据是否被接受完毕
 	if (len == -1 && errno == EAGAIN) //len 等于-1 并且错误为EAGAIN
 	{
-		printf("analyse get request!\n");
+		//printf("analyse get request!\n");
 		//解析请求行,对，先处理get请求
 		char* pt = strstr(buf, "\r\n"); // 遇到这两个字符\r\n 从左往右搜到之后，就结束了
 		int reqLen = (int)(pt - buf); //得到请求行的长度，结束的地址，减去起始的地址
 		buf[reqLen] = '\0'; // buf[reqLen-1]是上面的最后一个字符
-		parseRequestLine(buf, info->fd);
+		//printf("%s\n", buf);
+		// GET /categories/ HTTP/1.1
+		parseRequestLine(buf, info->fd); 
 	}
 	else if (len == 0)
 	{
@@ -203,19 +206,20 @@ void* recvHttpRequest(void* arg)
 
 int parseRequestLine(const char* line, int cfd)
 {
-	//解析请求行， get / xxx/1.jpg http1.1
+	//GET /categories/ HTTP/1.1
+	//解析请求行， get / xxx/1.jpg http1.1  
 	// 三部分:请求方式，请求资源，请求http协议的版本，数据之间有空格，
 	// sscanf 对格式化的字符串进行拆分
 	char method[12];  //get 或post
 	char path[1024];  //存储请求的静态资源，文件路径
-	sscanf(line, "%[^ ] %[^ ]", method, path);
+	sscanf(line, "%[^ ] %[^ ]", method, path); //使用正则表达式记录空行来进行分割，取出请求方式，和请求路径
 	printf("method: %s,path: %s\n", method, path);
 	if (strcasecmp(method, "get") != 0)   //strcasecmp比较时不区分大小写
 	{
 		//非get请求不处理
 		return -1;
-	}
-	decodeMsg(path, path); //将请求的路径转码 linux会转成utf8
+	} 
+	decodeMsg(path, path); // 避免中文的编码问题 将请求的路径转码 linux会转成utf8
 	//处理客户端请求的静态资源(目录或文件)
 	char* file = NULL;
 	if (strcmp(path, "/") == 0) //判断是不是根目录
@@ -224,17 +228,17 @@ int parseRequestLine(const char* line, int cfd)
 	}
 	else
 	{
-		file = path + 1;  //把开始的 /去掉吧
+		file = path + 1;  // 指针+1 把开始的 /去掉吧
 
 	}
 	//判断file属性，是文件还是目录
 	struct stat st;
-	int ret = stat(file, &st); //file文件属性，同时st保存了文件的大小
+	int ret = stat(file, &st); // file文件属性，同时将信息传入st保存了文件的大小
 	if (ret == -1)
 	{
 		//文件不存在  -- 回复404
 		sendHeadMsg(cfd, 404, "Not Found", getFileType(".html"), -1);
-		sendFile("404.html", cfd);
+		sendFile("404.html", cfd); //发送404对应的html文件
 		return 0;
 
 	}
@@ -242,7 +246,7 @@ int parseRequestLine(const char* line, int cfd)
 	if (S_ISDIR(st.st_mode)) //如果时目录返回1，不是返回0
 	{
 		//把这个目录中的内容发送给客户端
-		sendHeadMsg(cfd, 200, "OK", getFileType(".html"), -1);
+		sendHeadMsg(cfd, 200, "OK", getFileType(".html"), (int)st.st_size);
 		sendDir(file, cfd);
 	}
 	else
