@@ -1,4 +1,4 @@
-# Http高并发发武器(Reactor模型)
+# Http高并发服务器(Reactor模型)
 
 ## 开发环境
 

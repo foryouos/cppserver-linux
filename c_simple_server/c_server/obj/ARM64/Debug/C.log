@@ -1,0 +1,125 @@
+﻿  正在验证源
+  正在将源远程复制到“localhost”
+  正在验证体系结构
+  正在验证体系结构
+C:\Program Files\Microsoft Visual Studio\2022\Professional\MSBuild\Microsoft\VC\v170\Application Type\Linux\1.0\Linux.targets(204,5): warning : 当前项目体系结构“ARM64”不兼容远程系统体系结构“x64”(“x86_64”)。请在 Configuration Manager 中将项目体系结构切换为“x64”。如果正在交叉编译，可以忽略此警告。
+  正在启动远程生成
+  正在编译源:
+  Channel.c
+  ChannelMap.c
+D:\cppserver-linux\c_simple_server\C\ChannelMap.c(9,63): warning : conversion to ‘long unsigned int’ from ‘int’ may change the sign of the result [-Wsign-conversion]
+D:\cppserver-linux\c_simple_server\C\ChannelMap.c(9,63): warning :     9 |  map->list = (struct Channel**)malloc(sizeof(struct Channel*) * size);
+D:\cppserver-linux\c_simple_server\C\ChannelMap.c(9,63): warning :       |                                                               ^
+D:\cppserver-linux\c_simple_server\C\ChannelMap.c(51,54): warning : conversion to ‘size_t’ {aka ‘long unsigned int’} from ‘int’ may change the sign of the result [-Wsign-conversion]
+D:\cppserver-linux\c_simple_server\C\ChannelMap.c(51,54): warning :    51 |   struct Channel** temp = realloc(map->list, curSize * unitSize); // ���ط���ɹ�֮�����ݿ����ʼ��ַ
+D:\cppserver-linux\c_simple_server\C\ChannelMap.c(51,54): warning :       |                                              ~~~~~~~~^~~~~~~~~~
+D:\cppserver-linux\c_simple_server\C\ChannelMap.c(59,3): warning : implicit declaration of function ‘memset’ [-Wimplicit-function-declaration]
+D:\cppserver-linux\c_simple_server\C\ChannelMap.c(59,3): warning :    59 |   memset(&map->list[map->size], 0, (curSize - map->size)*unitSize);
+D:\cppserver-linux\c_simple_server\C\ChannelMap.c(59,3): warning :       |   ^~~~~~
+D:\cppserver-linux\c_simple_server\C\ChannelMap.c(59,3): warning : incompatible implicit declaration of built-in function ‘memset’
+D:\cppserver-linux\c_simple_server\C\ChannelMap.c(2,1): message : include ‘<string.h>’ or provide a declaration of ‘memset’
+D:\cppserver-linux\c_simple_server\C\ChannelMap.c(2,1): message :     1 | #include "ChannelMap.h"
+D:\cppserver-linux\c_simple_server\C\ChannelMap.c(2,1): message :   +++ |+#include <string.h>
+D:\cppserver-linux\c_simple_server\C\ChannelMap.c(2,1): message :     2 |
+D:\cppserver-linux\c_simple_server\C\ChannelMap.c(59,57): warning : conversion to ‘long unsigned int’ from ‘int’ may change the sign of the result [-Wsign-conversion]
+D:\cppserver-linux\c_simple_server\C\ChannelMap.c(59,57): warning :    59 |   memset(&map->list[map->size], 0, (curSize - map->size)*unitSize);
+D:\cppserver-linux\c_simple_server\C\ChannelMap.c(59,57): warning :       |                                    ~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~
+  Dispatcher.c
+  EpollDispatcher.c
+D:\cppserver-linux\c_simple_server\C\Dispatcher.h(12,44): warning : ‘struct EventLoop’ declared inside parameter list will not be visible outside of this definition or declaration
+D:\cppserver-linux\c_simple_server\C\Dispatcher.h(12,44): warning :    12 |  int (*add)(struct Channel* channel,struct EventLoop* evLoop);  //ChannelIO��·ģ��
+D:\cppserver-linux\c_simple_server\C\Dispatcher.h(12,44): warning :       |                                            ^~~~~~~~~
+D:\cppserver-linux\c_simple_server\C\Dispatcher.h(14,48): warning : ‘struct EventLoop’ declared inside parameter list will not be visible outside of this definition or declaration
+D:\cppserver-linux\c_simple_server\C\Dispatcher.h(14,48): warning :    14 |  int (*remove)(struct Channel* channel, struct EventLoop* evLoop);
+D:\cppserver-linux\c_simple_server\C\Dispatcher.h(14,48): warning :       |                                                ^~~~~~~~~
+D:\cppserver-linux\c_simple_server\C\Dispatcher.h(16,48): warning : ‘struct EventLoop’ declared inside parameter list will not be visible outside of this definition or declaration
+D:\cppserver-linux\c_simple_server\C\Dispatcher.h(16,48): warning :    16 |  int (*modify)(struct Channel* channel, struct EventLoop* evLoop);
+D:\cppserver-linux\c_simple_server\C\Dispatcher.h(16,48): warning :       |                                                ^~~~~~~~~
+D:\cppserver-linux\c_simple_server\C\Dispatcher.h(18,25): warning : ‘struct EventLoop’ declared inside parameter list will not be visible outside of this definition or declaration
+D:\cppserver-linux\c_simple_server\C\Dispatcher.h(18,25): warning :    18 |  int (*dispatch)(struct EventLoop* evLoop,int timeout);//��λ S ��ʱʱ��
+D:\cppserver-linux\c_simple_server\C\Dispatcher.h(18,25): warning :       |                         ^~~~~~~~~
+D:\cppserver-linux\c_simple_server\C\Dispatcher.h(20,22): warning : ‘struct EventLoop’ declared inside parameter list will not be visible outside of this definition or declaration
+D:\cppserver-linux\c_simple_server\C\Dispatcher.h(20,22): warning :    20 |  int (*clear)(struct EventLoop* evLoop);
+D:\cppserver-linux\c_simple_server\C\Dispatcher.h(20,22): warning :       |                      ^~~~~~~~~
+D:\cppserver-linux\c_simple_server\C\EpollDispatcher.c(20,2): error : ‘epollInit’ undeclared here (not in a function); did you mean ‘epoll_wait’?
+D:\cppserver-linux\c_simple_server\C\EpollDispatcher.c(20,2): error :    20 |  epollInit,
+D:\cppserver-linux\c_simple_server\C\EpollDispatcher.c(20,2): error :       |  ^~~~~~~~~
+D:\cppserver-linux\c_simple_server\C\EpollDispatcher.c(20,2): error :       |  epoll_wait
+D:\cppserver-linux\c_simple_server\C\EpollDispatcher.c(21,2): error : ‘epollAdd’ undeclared here (not in a function)
+D:\cppserver-linux\c_simple_server\C\EpollDispatcher.c(21,2): error :    21 |  epollAdd,
+D:\cppserver-linux\c_simple_server\C\EpollDispatcher.c(21,2): error :       |  ^~~~~~~~
+D:\cppserver-linux\c_simple_server\C\EpollDispatcher.c(22,2): error : ‘epollRemove’ undeclared here (not in a function)
+D:\cppserver-linux\c_simple_server\C\EpollDispatcher.c(22,2): error :    22 |  epollRemove,
+D:\cppserver-linux\c_simple_server\C\EpollDispatcher.c(22,2): error :       |  ^~~~~~~~~~~
+D:\cppserver-linux\c_simple_server\C\EpollDispatcher.c(23,2): error : ‘epollModify’ undeclared here (not in a function)
+D:\cppserver-linux\c_simple_server\C\EpollDispatcher.c(23,2): error :    23 |  epollModify,
+D:\cppserver-linux\c_simple_server\C\EpollDispatcher.c(23,2): error :       |  ^~~~~~~~~~~
+D:\cppserver-linux\c_simple_server\C\EpollDispatcher.c(24,2): error : ‘epollDispatch’ undeclared here (not in a function); did you mean ‘EpollDispatcher’?
+D:\cppserver-linux\c_simple_server\C\EpollDispatcher.c(24,2): error :    24 |  epollDispatch,
+D:\cppserver-linux\c_simple_server\C\EpollDispatcher.c(24,2): error :       |  ^~~~~~~~~~~~~
+D:\cppserver-linux\c_simple_server\C\EpollDispatcher.c(24,2): error :       |  EpollDispatcher
+D:\cppserver-linux\c_simple_server\C\EpollDispatcher.c(25,2): error : ‘epollClear’ undeclared here (not in a function)
+D:\cppserver-linux\c_simple_server\C\EpollDispatcher.c(25,2): error :    25 |  epollClear
+D:\cppserver-linux\c_simple_server\C\EpollDispatcher.c(25,2): error :       |  ^~~~~~~~~~
+D:\cppserver-linux\c_simple_server\C\EpollDispatcher.c(31,1): warning : no return statement in function returning non-void [-Wreturn-type]
+D:\cppserver-linux\c_simple_server\C\EpollDispatcher.c(31,1): warning :    31 | }
+D:\cppserver-linux\c_simple_server\C\EpollDispatcher.c(31,1): warning :       | ^
+D:\cppserver-linux\c_simple_server\C\EpollDispatcher.c(32,53): warning : ‘struct EventLoop’ declared inside parameter list will not be visible outside of this definition or declaration
+D:\cppserver-linux\c_simple_server\C\EpollDispatcher.c(32,53): warning :    32 | static int epollAdd(struct Channel* channel, struct EventLoop* evLoop)
+D:\cppserver-linux\c_simple_server\C\EpollDispatcher.c(32,53): warning :       |                                                     ^~~~~~~~~
+D:\cppserver-linux\c_simple_server\C\EpollDispatcher.c(35,1): warning : no return statement in function returning non-void [-Wreturn-type]
+D:\cppserver-linux\c_simple_server\C\EpollDispatcher.c(35,1): warning :    35 | }
+D:\cppserver-linux\c_simple_server\C\EpollDispatcher.c(35,1): warning :       | ^
+D:\cppserver-linux\c_simple_server\C\EpollDispatcher.c(36,56): warning : ‘struct EventLoop’ declared inside parameter list will not be visible outside of this definition or declaration
+D:\cppserver-linux\c_simple_server\C\EpollDispatcher.c(36,56): warning :    36 | static int epollRemove(struct Channel* channel, struct EventLoop* evLoop)
+D:\cppserver-linux\c_simple_server\C\EpollDispatcher.c(36,56): warning :       |                                                        ^~~~~~~~~
+D:\cppserver-linux\c_simple_server\C\EpollDispatcher.c(39,1): warning : no return statement in function returning non-void [-Wreturn-type]
+D:\cppserver-linux\c_simple_server\C\EpollDispatcher.c(39,1): warning :    39 | }
+D:\cppserver-linux\c_simple_server\C\EpollDispatcher.c(39,1): warning :       | ^
+D:\cppserver-linux\c_simple_server\C\EpollDispatcher.c(41,56): warning : ‘struct EventLoop’ declared inside parameter list will not be visible outside of this definition or declaration
+D:\cppserver-linux\c_simple_server\C\EpollDispatcher.c(41,56): warning :    41 | static int epollModify(struct Channel* channel, struct EventLoop* evLoop)
+D:\cppserver-linux\c_simple_server\C\EpollDispatcher.c(41,56): warning :       |                                                        ^~~~~~~~~
+D:\cppserver-linux\c_simple_server\C\EpollDispatcher.c(44,1): warning : no return statement in function returning non-void [-Wreturn-type]
+D:\cppserver-linux\c_simple_server\C\EpollDispatcher.c(44,1): warning :    44 | }
+D:\cppserver-linux\c_simple_server\C\EpollDispatcher.c(44,1): warning :       | ^
+D:\cppserver-linux\c_simple_server\C\EpollDispatcher.c(46,33): warning : ‘struct EventLoop’ declared inside parameter list will not be visible outside of this definition or declaration
+D:\cppserver-linux\c_simple_server\C\EpollDispatcher.c(46,33): warning :    46 | static int epollDispatch(struct EventLoop* evLoop, int timeout)//��λ S ��ʱʱ��
+D:\cppserver-linux\c_simple_server\C\EpollDispatcher.c(46,33): warning :       |                                 ^~~~~~~~~
+D:\cppserver-linux\c_simple_server\C\EpollDispatcher.c(49,1): warning : no return statement in function returning non-void [-Wreturn-type]
+D:\cppserver-linux\c_simple_server\C\EpollDispatcher.c(49,1): warning :    49 | }
+D:\cppserver-linux\c_simple_server\C\EpollDispatcher.c(49,1): warning :       | ^
+D:\cppserver-linux\c_simple_server\C\EpollDispatcher.c(51,30): warning : ‘struct EventLoop’ declared inside parameter list will not be visible outside of this definition or declaration
+D:\cppserver-linux\c_simple_server\C\EpollDispatcher.c(51,30): warning :    51 | static int epollClear(struct EventLoop* evLoop)
+D:\cppserver-linux\c_simple_server\C\EpollDispatcher.c(51,30): warning :       |                              ^~~~~~~~~
+D:\cppserver-linux\c_simple_server\C\EpollDispatcher.c(54,1): warning : no return statement in function returning non-void [-Wreturn-type]
+D:\cppserver-linux\c_simple_server\C\EpollDispatcher.c(54,1): warning :    54 | }
+D:\cppserver-linux\c_simple_server\C\EpollDispatcher.c(54,1): warning :       | ^
+D:\cppserver-linux\c_simple_server\C\EpollDispatcher.c(51,12): warning : ‘epollClear’ defined but not used [-Wunused-function]
+D:\cppserver-linux\c_simple_server\C\EpollDispatcher.c(51,12): warning :    51 | static int epollClear(struct EventLoop* evLoop)
+D:\cppserver-linux\c_simple_server\C\EpollDispatcher.c(51,12): warning :       |            ^~~~~~~~~~
+D:\cppserver-linux\c_simple_server\C\EpollDispatcher.c(46,12): warning : ‘epollDispatch’ defined but not used [-Wunused-function]
+D:\cppserver-linux\c_simple_server\C\EpollDispatcher.c(46,12): warning :    46 | static int epollDispatch(struct EventLoop* evLoop, int timeout)//��λ S ��ʱʱ��
+D:\cppserver-linux\c_simple_server\C\EpollDispatcher.c(46,12): warning :       |            ^~~~~~~~~~~~~
+D:\cppserver-linux\c_simple_server\C\EpollDispatcher.c(41,12): warning : ‘epollModify’ defined but not used [-Wunused-function]
+D:\cppserver-linux\c_simple_server\C\EpollDispatcher.c(41,12): warning :    41 | static int epollModify(struct Channel* channel, struct EventLoop* evLoop)
+D:\cppserver-linux\c_simple_server\C\EpollDispatcher.c(41,12): warning :       |            ^~~~~~~~~~~
+D:\cppserver-linux\c_simple_server\C\EpollDispatcher.c(36,12): warning : ‘epollRemove’ defined but not used [-Wunused-function]
+D:\cppserver-linux\c_simple_server\C\EpollDispatcher.c(36,12): warning :    36 | static int epollRemove(struct Channel* channel, struct EventLoop* evLoop)
+D:\cppserver-linux\c_simple_server\C\EpollDispatcher.c(36,12): warning :       |            ^~~~~~~~~~~
+D:\cppserver-linux\c_simple_server\C\EpollDispatcher.c(32,12): warning : ‘epollAdd’ defined but not used [-Wunused-function]
+D:\cppserver-linux\c_simple_server\C\EpollDispatcher.c(32,12): warning :    32 | static int epollAdd(struct Channel* channel, struct EventLoop* evLoop)
+D:\cppserver-linux\c_simple_server\C\EpollDispatcher.c(32,12): warning :       |            ^~~~~~~~
+D:\cppserver-linux\c_simple_server\C\EpollDispatcher.c(28,14): warning : ‘epollInit’ defined but not used [-Wunused-function]
+D:\cppserver-linux\c_simple_server\C\EpollDispatcher.c(28,14): warning :    28 | static void* epollInit()
+D:\cppserver-linux\c_simple_server\C\EpollDispatcher.c(28,14): warning :       |              ^~~~~~~~~
+  EventLoop.c
+  main.c
+  server.c
+D:\cppserver-linux\c_simple_server\C\server.c(392,13): warning : implicit declaration of function ‘scandir’; did you mean ‘srand’? [-Wimplicit-function-declaration]
+D:\cppserver-linux\c_simple_server\C\server.c(392,13): warning :   392 |  int name = scandir(dirName, &namelist, NULL, alphasort); //����Ŀ¼���ж��ٸ��ļ�
+D:\cppserver-linux\c_simple_server\C\server.c(392,13): warning :       |             ^~~~~~~
+D:\cppserver-linux\c_simple_server\C\server.c(392,13): warning :       |             srand
+D:\cppserver-linux\c_simple_server\C\server.c(392,47): error : ‘alphasort’ undeclared (first use in this function)
+D:\cppserver-linux\c_simple_server\C\server.c(392,47): error :   392 |  int name = scandir(dirName, &namelist, NULL, alphasort); //����Ŀ¼���ж��ٸ��ļ�
+D:\cppserver-linux\c_simple_server\C\server.c(392,47): error :       |                                               ^~~~~~~~~
+D:\cppserver-linux\c_simple_server\C\server.c(392,47): message : each undeclared identifier is reported only once for each function it appears in

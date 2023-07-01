@@ -1,0 +1,17 @@
+﻿  正在验证源
+  正在将源远程复制到“localhost”
+  正在验证体系结构
+  正在验证体系结构
+C:\Program Files\Microsoft Visual Studio\2022\Professional\MSBuild\Microsoft\VC\v170\Application Type\Linux\1.0\Linux.targets(204,5): warning : 当前项目体系结构“ARM64”不兼容远程系统体系结构“x64”(“x86_64”)。请在 Configuration Manager 中将项目体系结构切换为“x64”。如果正在交叉编译，可以忽略此警告。
+  正在启动远程生成
+  正在编译源:
+  main.c
+  server.c
+D:\cppserver-linux\c_simple_server\c_simple_server\server.c(392,13): warning : implicit declaration of function ‘scandir’; did you mean ‘srand’? [-Wimplicit-function-declaration]
+D:\cppserver-linux\c_simple_server\c_simple_server\server.c(392,13): warning :   392 |  int name = scandir(dirName, &namelist, NULL, alphasort); //����Ŀ¼���ж��ٸ��ļ�
+D:\cppserver-linux\c_simple_server\c_simple_server\server.c(392,13): warning :       |             ^~~~~~~
+D:\cppserver-linux\c_simple_server\c_simple_server\server.c(392,13): warning :       |             srand
+D:\cppserver-linux\c_simple_server\c_simple_server\server.c(392,47): error : ‘alphasort’ undeclared (first use in this function)
+D:\cppserver-linux\c_simple_server\c_simple_server\server.c(392,47): error :   392 |  int name = scandir(dirName, &namelist, NULL, alphasort); //����Ŀ¼���ж��ٸ��ļ�
+D:\cppserver-linux\c_simple_server\c_simple_server\server.c(392,47): error :       |                                               ^~~~~~~~~
+D:\cppserver-linux\c_simple_server\c_simple_server\server.c(392,47): message : each undeclared identifier is reported only once for each function it appears in

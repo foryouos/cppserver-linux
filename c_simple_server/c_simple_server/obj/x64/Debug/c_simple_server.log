@@ -4,6 +4,7 @@
   正在验证体系结构
   正在启动远程生成
   正在编译源:
+  main.c
   server.c
   正在链接对象
   c_simple_server.vcxproj -> D:\cppserver-linux\c_simple_server\c_simple_server\bin\x64\Debug\c_simple_server.out
