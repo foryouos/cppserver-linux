@@ -5,130 +5,142 @@
   正在启动远程生成
   正在编译源:
   Buffer.c
-D:\cppserver-linux\c_simple_server\C\Buffer.c(15,32): warning : conversion to ‘size_t’ {aka ‘long unsigned int’} from ‘int’ may change the sign of the result [-Wsign-conversion]
-D:\cppserver-linux\c_simple_server\C\Buffer.c(15,32): warning :    15 |   buffer->data = (char*)malloc(size);
-D:\cppserver-linux\c_simple_server\C\Buffer.c(15,32): warning :       |                                ^~~~
-D:\cppserver-linux\c_simple_server\C\Buffer.c(19,27): warning : conversion to ‘size_t’ {aka ‘long unsigned int’} from ‘int’ may change the sign of the result [-Wsign-conversion]
-D:\cppserver-linux\c_simple_server\C\Buffer.c(19,27): warning :    19 |   memset(buffer->data, 0, size);
-D:\cppserver-linux\c_simple_server\C\Buffer.c(19,27): warning :       |                           ^~~~
-D:\cppserver-linux\c_simple_server\C\Buffer.c(50,55): warning : conversion to ‘size_t’ {aka ‘long unsigned int’} from ‘int’ may change the sign of the result [-Wsign-conversion]
-D:\cppserver-linux\c_simple_server\C\Buffer.c(50,55): warning :    50 |   memcpy(buffer->data, buffer->data + buffer->readPos,readable);
-D:\cppserver-linux\c_simple_server\C\Buffer.c(50,55): warning :       |                                                       ^~~~~~~~
-D:\cppserver-linux\c_simple_server\C\Buffer.c(58,55): warning : conversion to ‘size_t’ {aka ‘long unsigned int’} from ‘int’ may change the sign of the result [-Wsign-conversion]
-D:\cppserver-linux\c_simple_server\C\Buffer.c(58,55): warning :    58 |   void* temp = realloc(buffer->data, buffer->capacity + size);
-D:\cppserver-linux\c_simple_server\C\Buffer.c(58,55): warning :       |                                      ~~~~~~~~~~~~~~~~~^~~~~~
-D:\cppserver-linux\c_simple_server\C\Buffer.c(65,36): warning : conversion to ‘size_t’ {aka ‘long unsigned int’} from ‘int’ may change the sign of the result [-Wsign-conversion]
-D:\cppserver-linux\c_simple_server\C\Buffer.c(65,36): warning :    65 |   memset(temp + buffer->capacity,0,size);
-D:\cppserver-linux\c_simple_server\C\Buffer.c(65,36): warning :       |                                    ^~~~
-D:\cppserver-linux\c_simple_server\C\Buffer.c(92,48): warning : conversion to ‘size_t’ {aka ‘long unsigned int’} from ‘int’ may change the sign of the result [-Wsign-conversion]
-D:\cppserver-linux\c_simple_server\C\Buffer.c(92,48): warning :    92 |  memcpy(buffer->data + buffer->writePos, data, size);
-D:\cppserver-linux\c_simple_server\C\Buffer.c(92,48): warning :       |                                                ^~~~
-D:\cppserver-linux\c_simple_server\C\Buffer.c(100,13): warning : conversion from ‘size_t’ {aka ‘long unsigned int’} to ‘int’ may change value [-Wconversion]
-D:\cppserver-linux\c_simple_server\C\Buffer.c(100,13): warning :   100 |  int size = strlen(data);
-D:\cppserver-linux\c_simple_server\C\Buffer.c(100,13): warning :       |             ^~~~~~
-D:\cppserver-linux\c_simple_server\C\Buffer.c(114,19): warning : conversion to ‘size_t’ {aka ‘long unsigned int’} from ‘int’ may change the sign of the result [-Wsign-conversion]
-D:\cppserver-linux\c_simple_server\C\Buffer.c(114,19): warning :   114 |  vec[0].iov_len = writeable;
-D:\cppserver-linux\c_simple_server\C\Buffer.c(114,19): warning :       |                   ^~~~~~~~~
-D:\cppserver-linux\c_simple_server\C\Buffer.c(119,15): warning : conversion from ‘ssize_t’ {aka ‘long int’} to ‘int’ may change value [-Wconversion]
-D:\cppserver-linux\c_simple_server\C\Buffer.c(119,15): warning :   119 |  int result = readv(fd, vec, 2);
-D:\cppserver-linux\c_simple_server\C\Buffer.c(119,15): warning :       |               ^~~~~
-D:\cppserver-linux\c_simple_server\C\Buffer.c(146,54): warning : conversion to ‘size_t’ {aka ‘long unsigned int’} from ‘int’ may change the sign of the result [-Wsign-conversion]
-D:\cppserver-linux\c_simple_server\C\Buffer.c(146,54): warning :   146 |  char * ptr = memmem(buffer->data + buffer->readPos, bufferReadableSize(buffer), "\r\n", 2);
-D:\cppserver-linux\c_simple_server\C\Buffer.c(146,54): warning :       |                                                      ^~~~~~~~~~~~~~~~~~~~~~~~~~
-D:\cppserver-linux\c_simple_server\C\Buffer.c(160,60): warning : conversion to ‘size_t’ {aka ‘long unsigned int’} from ‘int’ may change the sign of the result [-Wsign-conversion]
-D:\cppserver-linux\c_simple_server\C\Buffer.c(160,60): warning :   160 |   int count = send(socket, buffer->data + buffer->readPos, readable,MSG_NOSIGNAL);
-D:\cppserver-linux\c_simple_server\C\Buffer.c(160,60): warning :       |                                                            ^~~~~~~~
-D:\cppserver-linux\c_simple_server\C\Buffer.c(160,15): warning : conversion from ‘ssize_t’ {aka ‘long int’} to ‘int’ may change value [-Wconversion]
-D:\cppserver-linux\c_simple_server\C\Buffer.c(160,15): warning :   160 |   int count = send(socket, buffer->data + buffer->readPos, readable,MSG_NOSIGNAL);
-D:\cppserver-linux\c_simple_server\C\Buffer.c(160,15): warning :       |               ^~~~
+D:\cppserver-linux\c_simple_server\c_server\Buffer.c(18,32): warning : conversion to ‘size_t’ {aka ‘long unsigned int’} from ‘int’ may change the sign of the result [-Wsign-conversion]
+D:\cppserver-linux\c_simple_server\c_server\Buffer.c(18,32): warning :    18 |   buffer->data = (char*)malloc(size);
+D:\cppserver-linux\c_simple_server\c_server\Buffer.c(18,32): warning :       |                                ^~~~
+D:\cppserver-linux\c_simple_server\c_server\Buffer.c(22,27): warning : conversion to ‘size_t’ {aka ‘long unsigned int’} from ‘int’ may change the sign of the result [-Wsign-conversion]
+D:\cppserver-linux\c_simple_server\c_server\Buffer.c(22,27): warning :    22 |   memset(buffer->data, 0, size);
+D:\cppserver-linux\c_simple_server\c_server\Buffer.c(22,27): warning :       |                           ^~~~
+D:\cppserver-linux\c_simple_server\c_server\Buffer.c(53,55): warning : conversion to ‘size_t’ {aka ‘long unsigned int’} from ‘int’ may change the sign of the result [-Wsign-conversion]
+D:\cppserver-linux\c_simple_server\c_server\Buffer.c(53,55): warning :    53 |   memcpy(buffer->data, buffer->data + buffer->readPos,readable);
+D:\cppserver-linux\c_simple_server\c_server\Buffer.c(53,55): warning :       |                                                       ^~~~~~~~
+D:\cppserver-linux\c_simple_server\c_server\Buffer.c(61,55): warning : conversion to ‘size_t’ {aka ‘long unsigned int’} from ‘int’ may change the sign of the result [-Wsign-conversion]
+D:\cppserver-linux\c_simple_server\c_server\Buffer.c(61,55): warning :    61 |   void* temp = realloc(buffer->data, buffer->capacity + size);
+D:\cppserver-linux\c_simple_server\c_server\Buffer.c(61,55): warning :       |                                      ~~~~~~~~~~~~~~~~~^~~~~~
+D:\cppserver-linux\c_simple_server\c_server\Buffer.c(68,36): warning : conversion to ‘size_t’ {aka ‘long unsigned int’} from ‘int’ may change the sign of the result [-Wsign-conversion]
+D:\cppserver-linux\c_simple_server\c_server\Buffer.c(68,36): warning :    68 |   memset(temp + buffer->capacity,0,size);
+D:\cppserver-linux\c_simple_server\c_server\Buffer.c(68,36): warning :       |                                    ^~~~
+D:\cppserver-linux\c_simple_server\c_server\Buffer.c(95,48): warning : conversion to ‘size_t’ {aka ‘long unsigned int’} from ‘int’ may change the sign of the result [-Wsign-conversion]
+D:\cppserver-linux\c_simple_server\c_server\Buffer.c(95,48): warning :    95 |  memcpy(buffer->data + buffer->writePos, data, size);
+D:\cppserver-linux\c_simple_server\c_server\Buffer.c(95,48): warning :       |                                                ^~~~
+D:\cppserver-linux\c_simple_server\c_server\Buffer.c(103,13): warning : conversion from ‘size_t’ {aka ‘long unsigned int’} to ‘int’ may change value [-Wconversion]
+D:\cppserver-linux\c_simple_server\c_server\Buffer.c(103,13): warning :   103 |  int size = strlen(data);
+D:\cppserver-linux\c_simple_server\c_server\Buffer.c(103,13): warning :       |             ^~~~~~
+D:\cppserver-linux\c_simple_server\c_server\Buffer.c(117,19): warning : conversion to ‘size_t’ {aka ‘long unsigned int’} from ‘int’ may change the sign of the result [-Wsign-conversion]
+D:\cppserver-linux\c_simple_server\c_server\Buffer.c(117,19): warning :   117 |  vec[0].iov_len = writeable;
+D:\cppserver-linux\c_simple_server\c_server\Buffer.c(117,19): warning :       |                   ^~~~~~~~~
+D:\cppserver-linux\c_simple_server\c_server\Buffer.c(122,15): warning : conversion from ‘ssize_t’ {aka ‘long int’} to ‘int’ may change value [-Wconversion]
+D:\cppserver-linux\c_simple_server\c_server\Buffer.c(122,15): warning :   122 |  int result = readv(fd, vec, 2);
+D:\cppserver-linux\c_simple_server\c_server\Buffer.c(122,15): warning :       |               ^~~~~
+D:\cppserver-linux\c_simple_server\c_server\Buffer.c(149,54): warning : conversion to ‘size_t’ {aka ‘long unsigned int’} from ‘int’ may change the sign of the result [-Wsign-conversion]
+D:\cppserver-linux\c_simple_server\c_server\Buffer.c(149,54): warning :   149 |  char * ptr = memmem(buffer->data + buffer->readPos, bufferReadableSize(buffer), "\r\n", 2);
+D:\cppserver-linux\c_simple_server\c_server\Buffer.c(149,54): warning :       |                                                      ^~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\cppserver-linux\c_simple_server\c_server\Buffer.c(163,60): warning : conversion to ‘size_t’ {aka ‘long unsigned int’} from ‘int’ may change the sign of the result [-Wsign-conversion]
+D:\cppserver-linux\c_simple_server\c_server\Buffer.c(163,60): warning :   163 |   int count = send(socket, buffer->data + buffer->readPos, readable,MSG_NOSIGNAL);
+D:\cppserver-linux\c_simple_server\c_server\Buffer.c(163,60): warning :       |                                                            ^~~~~~~~
+D:\cppserver-linux\c_simple_server\c_server\Buffer.c(163,15): warning : conversion from ‘ssize_t’ {aka ‘long int’} to ‘int’ may change value [-Wconversion]
+D:\cppserver-linux\c_simple_server\c_server\Buffer.c(163,15): warning :   163 |   int count = send(socket, buffer->data + buffer->readPos, readable,MSG_NOSIGNAL);
+D:\cppserver-linux\c_simple_server\c_server\Buffer.c(163,15): warning :       |               ^~~~
+D:\cppserver-linux\c_simple_server\c_server\Buffer.c(183,41): warning : passing argument 3 of ‘sendfile’ from incompatible pointer type [-Wincompatible-pointer-types]
+D:\cppserver-linux\c_simple_server\c_server\Buffer.c(183,41): warning :   183 |   int count = (int)sendfile(socket, fd, &offset, (size_t)(count - offset));
+D:\cppserver-linux\c_simple_server\c_server\Buffer.c(183,41): warning :       |                                         ^~~~~~~
+D:\cppserver-linux\c_simple_server\c_server\Buffer.c(183,41): warning :       |                                         |
+D:\cppserver-linux\c_simple_server\c_server\Buffer.c(183,41): warning :       |                                         int *
+/usr/include/x86_64-linux-gnu/sys/sendfile.h(33,60): message : expected ‘off_t *’ {aka ‘long int *’} but argument is of type ‘int *’
+/usr/include/x86_64-linux-gnu/sys/sendfile.h(33,60): message :    33 | extern ssize_t sendfile (int __out_fd, int __in_fd, off_t *__offset,
+/usr/include/x86_64-linux-gnu/sys/sendfile.h(33,60): message :       |                                                     ~~~~~~~^~~~~~~~
+D:\cppserver-linux\c_simple_server\c_server\Buffer.c(183,65): warning : ‘count’ is used uninitialized in this function [-Wuninitialized]
+D:\cppserver-linux\c_simple_server\c_server\Buffer.c(183,65): warning :   183 |   int count = (int)sendfile(socket, fd, &offset, (size_t)(count - offset));
+D:\cppserver-linux\c_simple_server\c_server\Buffer.c(183,65): warning :       |                                                          ~~~~~~~^~~~~~~~~
   Channel.c
   ChannelMap.c
-D:\cppserver-linux\c_simple_server\C\ChannelMap.c(11,63): warning : conversion to ‘long unsigned int’ from ‘int’ may change the sign of the result [-Wsign-conversion]
-D:\cppserver-linux\c_simple_server\C\ChannelMap.c(11,63): warning :    11 |  map->list = (struct Channel**)malloc(sizeof(struct Channel*) * size);
-D:\cppserver-linux\c_simple_server\C\ChannelMap.c(11,63): warning :       |                                                               ^
-D:\cppserver-linux\c_simple_server\C\ChannelMap.c(53,54): warning : conversion to ‘size_t’ {aka ‘long unsigned int’} from ‘int’ may change the sign of the result [-Wsign-conversion]
-D:\cppserver-linux\c_simple_server\C\ChannelMap.c(53,54): warning :    53 |   struct Channel** temp = realloc(map->list, curSize * unitSize); // ���ط���ɹ�֮�����ݿ����ʼ��ַ
-D:\cppserver-linux\c_simple_server\C\ChannelMap.c(53,54): warning :       |                                              ~~~~~~~~^~~~~~~~~~
-D:\cppserver-linux\c_simple_server\C\ChannelMap.c(61,57): warning : conversion to ‘size_t’ {aka ‘long unsigned int’} from ‘int’ may change the sign of the result [-Wsign-conversion]
-D:\cppserver-linux\c_simple_server\C\ChannelMap.c(61,57): warning :    61 |   memset(&map->list[map->size], 0, (curSize - map->size)*unitSize);
-D:\cppserver-linux\c_simple_server\C\ChannelMap.c(61,57): warning :       |                                    ~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~
+D:\cppserver-linux\c_simple_server\c_server\ChannelMap.c(11,63): warning : conversion to ‘long unsigned int’ from ‘int’ may change the sign of the result [-Wsign-conversion]
+D:\cppserver-linux\c_simple_server\c_server\ChannelMap.c(11,63): warning :    11 |  map->list = (struct Channel**)malloc(sizeof(struct Channel*) * size);
+D:\cppserver-linux\c_simple_server\c_server\ChannelMap.c(11,63): warning :       |                                                               ^
+D:\cppserver-linux\c_simple_server\c_server\ChannelMap.c(53,54): warning : conversion to ‘size_t’ {aka ‘long unsigned int’} from ‘int’ may change the sign of the result [-Wsign-conversion]
+D:\cppserver-linux\c_simple_server\c_server\ChannelMap.c(53,54): warning :    53 |   struct Channel** temp = realloc(map->list, curSize * unitSize); // ���ط���ɹ�֮�����ݿ����ʼ��ַ
+D:\cppserver-linux\c_simple_server\c_server\ChannelMap.c(53,54): warning :       |                                              ~~~~~~~~^~~~~~~~~~
+D:\cppserver-linux\c_simple_server\c_server\ChannelMap.c(61,57): warning : conversion to ‘size_t’ {aka ‘long unsigned int’} from ‘int’ may change the sign of the result [-Wsign-conversion]
+D:\cppserver-linux\c_simple_server\c_server\ChannelMap.c(61,57): warning :    61 |   memset(&map->list[map->size], 0, (curSize - map->size)*unitSize);
+D:\cppserver-linux\c_simple_server\c_server\ChannelMap.c(61,57): warning :       |                                    ~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~
   EpollDispatcher.c
-D:\cppserver-linux\c_simple_server\C\EpollDispatcher.c(79,14): warning : conversion to ‘uint32_t’ {aka ‘unsigned int’} from ‘int’ may change the sign of the result [-Wsign-conversion]
-D:\cppserver-linux\c_simple_server\C\EpollDispatcher.c(79,14): warning :    79 |  ev.events = events;
-D:\cppserver-linux\c_simple_server\C\EpollDispatcher.c(79,14): warning :       |              ^~~~~~
-D:\cppserver-linux\c_simple_server\C\EpollDispatcher.c(135,16): warning : conversion to ‘int’ from ‘uint32_t’ {aka ‘unsigned int’} may change the sign of the result [-Wsign-conversion]
-D:\cppserver-linux\c_simple_server\C\EpollDispatcher.c(135,16): warning :   135 |   int events = data->events[i].events;
-D:\cppserver-linux\c_simple_server\C\EpollDispatcher.c(135,16): warning :       |                ^~~~
+D:\cppserver-linux\c_simple_server\c_server\EpollDispatcher.c(79,14): warning : conversion to ‘uint32_t’ {aka ‘unsigned int’} from ‘int’ may change the sign of the result [-Wsign-conversion]
+D:\cppserver-linux\c_simple_server\c_server\EpollDispatcher.c(79,14): warning :    79 |  ev.events = events;
+D:\cppserver-linux\c_simple_server\c_server\EpollDispatcher.c(79,14): warning :       |              ^~~~~~
+D:\cppserver-linux\c_simple_server\c_server\EpollDispatcher.c(135,16): warning : conversion to ‘int’ from ‘uint32_t’ {aka ‘unsigned int’} may change the sign of the result [-Wsign-conversion]
+D:\cppserver-linux\c_simple_server\c_server\EpollDispatcher.c(135,16): warning :   135 |   int events = data->events[i].events;
+D:\cppserver-linux\c_simple_server\c_server\EpollDispatcher.c(135,16): warning :       |                ^~~~
   EventLoop.c
   HttpRequest.c
-D:\cppserver-linux\c_simple_server\C\HttpRequest.c(101,16): warning : initialization discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
-D:\cppserver-linux\c_simple_server\C\HttpRequest.c(101,16): warning :   101 |  char* space = end; //�󳤶ȣ�βָ�� - ��ʼָ��
-D:\cppserver-linux\c_simple_server\C\HttpRequest.c(101,16): warning :       |                ^~~
-D:\cppserver-linux\c_simple_server\C\HttpRequest.c(104,28): warning : conversion to ‘size_t’ {aka ‘long unsigned int’} from ‘long int’ may change the sign of the result [-Wsign-conversion]
-D:\cppserver-linux\c_simple_server\C\HttpRequest.c(104,28): warning :   104 |   space = memmem(start, end-start, sub, strlen(sub));
-D:\cppserver-linux\c_simple_server\C\HttpRequest.c(104,28): warning :       |                         ~~~^~~~~~
-D:\cppserver-linux\c_simple_server\C\HttpRequest.c(108,15): warning : conversion from ‘long int’ to ‘int’ may change value [-Wconversion]
-D:\cppserver-linux\c_simple_server\C\HttpRequest.c(108,15): warning :   108 |  int length = space - start;
-D:\cppserver-linux\c_simple_server\C\HttpRequest.c(108,15): warning :       |               ^~~~~
-D:\cppserver-linux\c_simple_server\C\HttpRequest.c(111,35): warning : conversion to ‘size_t’ {aka ‘long unsigned int’} from ‘int’ may change the sign of the result [-Wsign-conversion]
-D:\cppserver-linux\c_simple_server\C\HttpRequest.c(111,35): warning :   111 |  char* tmp = (char*)malloc(length + 1);
-D:\cppserver-linux\c_simple_server\C\HttpRequest.c(111,35): warning :       |                            ~~~~~~~^~~
-D:\cppserver-linux\c_simple_server\C\HttpRequest.c(112,20): warning : conversion to ‘size_t’ {aka ‘long unsigned int’} from ‘int’ may change the sign of the result [-Wsign-conversion]
-D:\cppserver-linux\c_simple_server\C\HttpRequest.c(112,20): warning :   112 |  strncpy(tmp,start,length);
-D:\cppserver-linux\c_simple_server\C\HttpRequest.c(112,20): warning :       |                    ^~~~~~
-D:\cppserver-linux\c_simple_server\C\HttpRequest.c(126,17): warning : conversion from ‘long int’ to ‘int’ may change value [-Wconversion]
-D:\cppserver-linux\c_simple_server\C\HttpRequest.c(126,17): warning :   126 |  int lineSize = end - start;
-D:\cppserver-linux\c_simple_server\C\HttpRequest.c(126,17): warning :       |                 ^~~
-D:\cppserver-linux\c_simple_server\C\HttpRequest.c(183,18): warning : conversion from ‘long int’ to ‘int’ may change value [-Wconversion]
-D:\cppserver-linux\c_simple_server\C\HttpRequest.c(183,18): warning :   183 |   int lineSize = end - start;
-D:\cppserver-linux\c_simple_server\C\HttpRequest.c(183,18): warning :       |                  ^~~
-D:\cppserver-linux\c_simple_server\C\HttpRequest.c(185,32): warning : conversion to ‘size_t’ {aka ‘long unsigned int’} from ‘int’ may change the sign of the result [-Wsign-conversion]
-D:\cppserver-linux\c_simple_server\C\HttpRequest.c(188,38): warning : conversion to ‘size_t’ {aka ‘long unsigned int’} from ‘long int’ may change the sign of the result [-Wsign-conversion]
-D:\cppserver-linux\c_simple_server\C\HttpRequest.c(188,38): warning :   188 |    char* key = malloc(middle - start + 1);  // 1Ϊ\0�������ַ���
-D:\cppserver-linux\c_simple_server\C\HttpRequest.c(188,38): warning :       |                       ~~~~~~~~~~~~~~~^~~
-D:\cppserver-linux\c_simple_server\C\HttpRequest.c(189,31): warning : conversion to ‘size_t’ {aka ‘long unsigned int’} from ‘long int’ may change the sign of the result [-Wsign-conversion]
-D:\cppserver-linux\c_simple_server\C\HttpRequest.c(189,31): warning :   189 |    strncpy(key, start, middle - start);
-D:\cppserver-linux\c_simple_server\C\HttpRequest.c(189,31): warning :       |                        ~~~~~~~^~~~~~~
-D:\cppserver-linux\c_simple_server\C\HttpRequest.c(192,38): warning : conversion to ‘size_t’ {aka ‘long unsigned int’} from ‘long int’ may change the sign of the result [-Wsign-conversion]
-D:\cppserver-linux\c_simple_server\C\HttpRequest.c(192,38): warning :   192 |    char* value = malloc(end-middle-2 + 1);  // 2Ϊ��
-D:\cppserver-linux\c_simple_server\C\HttpRequest.c(192,38): warning :       |                         ~~~~~~~~~~~~~^~~
-D:\cppserver-linux\c_simple_server\C\HttpRequest.c(193,42): warning : conversion to ‘size_t’ {aka ‘long unsigned int’} from ‘long int’ may change the sign of the result [-Wsign-conversion]
-D:\cppserver-linux\c_simple_server\C\HttpRequest.c(193,42): warning :   193 |    strncpy(value, middle+2, end - middle - 2);
-D:\cppserver-linux\c_simple_server\C\HttpRequest.c(193,42): warning :       |                             ~~~~~~~~~~~~~^~~
-D:\cppserver-linux\c_simple_server\C\HttpRequest.c(417,13): warning : conversion from ‘ssize_t’ {aka ‘long int’} to ‘int’ may change value [-Wconversion]
-D:\cppserver-linux\c_simple_server\C\HttpRequest.c(417,13): warning :   417 |   int len = read(fd, buf, sizeof(buf));
-D:\cppserver-linux\c_simple_server\C\HttpRequest.c(417,13): warning :       |             ^~~~
+D:\cppserver-linux\c_simple_server\c_server\HttpRequest.c(103,16): warning : initialization discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+D:\cppserver-linux\c_simple_server\c_server\HttpRequest.c(103,16): warning :   103 |  char* space = end; //�󳤶ȣ�βָ�� - ��ʼָ��
+D:\cppserver-linux\c_simple_server\c_server\HttpRequest.c(103,16): warning :       |                ^~~
+D:\cppserver-linux\c_simple_server\c_server\HttpRequest.c(106,28): warning : conversion to ‘size_t’ {aka ‘long unsigned int’} from ‘long int’ may change the sign of the result [-Wsign-conversion]
+D:\cppserver-linux\c_simple_server\c_server\HttpRequest.c(106,28): warning :   106 |   space = memmem(start, end-start, sub, strlen(sub));
+D:\cppserver-linux\c_simple_server\c_server\HttpRequest.c(106,28): warning :       |                         ~~~^~~~~~
+D:\cppserver-linux\c_simple_server\c_server\HttpRequest.c(110,15): warning : conversion from ‘long int’ to ‘int’ may change value [-Wconversion]
+D:\cppserver-linux\c_simple_server\c_server\HttpRequest.c(110,15): warning :   110 |  int length = space - start;
+D:\cppserver-linux\c_simple_server\c_server\HttpRequest.c(110,15): warning :       |               ^~~~~
+D:\cppserver-linux\c_simple_server\c_server\HttpRequest.c(113,35): warning : conversion to ‘size_t’ {aka ‘long unsigned int’} from ‘int’ may change the sign of the result [-Wsign-conversion]
+D:\cppserver-linux\c_simple_server\c_server\HttpRequest.c(113,35): warning :   113 |  char* tmp = (char*)malloc(length + 1);
+D:\cppserver-linux\c_simple_server\c_server\HttpRequest.c(113,35): warning :       |                            ~~~~~~~^~~
+D:\cppserver-linux\c_simple_server\c_server\HttpRequest.c(114,20): warning : conversion to ‘size_t’ {aka ‘long unsigned int’} from ‘int’ may change the sign of the result [-Wsign-conversion]
+D:\cppserver-linux\c_simple_server\c_server\HttpRequest.c(114,20): warning :   114 |  strncpy(tmp,start,length);
+D:\cppserver-linux\c_simple_server\c_server\HttpRequest.c(114,20): warning :       |                    ^~~~~~
+D:\cppserver-linux\c_simple_server\c_server\HttpRequest.c(128,17): warning : conversion from ‘long int’ to ‘int’ may change value [-Wconversion]
+D:\cppserver-linux\c_simple_server\c_server\HttpRequest.c(128,17): warning :   128 |  int lineSize = end - start;
+D:\cppserver-linux\c_simple_server\c_server\HttpRequest.c(128,17): warning :       |                 ^~~
+D:\cppserver-linux\c_simple_server\c_server\HttpRequest.c(185,18): warning : conversion from ‘long int’ to ‘int’ may change value [-Wconversion]
+D:\cppserver-linux\c_simple_server\c_server\HttpRequest.c(185,18): warning :   185 |   int lineSize = end - start;
+D:\cppserver-linux\c_simple_server\c_server\HttpRequest.c(185,18): warning :       |                  ^~~
+D:\cppserver-linux\c_simple_server\c_server\HttpRequest.c(187,32): warning : conversion to ‘size_t’ {aka ‘long unsigned int’} from ‘int’ may change the sign of the result [-Wsign-conversion]
+D:\cppserver-linux\c_simple_server\c_server\HttpRequest.c(190,38): warning : conversion to ‘size_t’ {aka ‘long unsigned int’} from ‘long int’ may change the sign of the result [-Wsign-conversion]
+D:\cppserver-linux\c_simple_server\c_server\HttpRequest.c(190,38): warning :   190 |    char* key = malloc(middle - start + 1);  // 1Ϊ\0�������ַ���
+D:\cppserver-linux\c_simple_server\c_server\HttpRequest.c(190,38): warning :       |                       ~~~~~~~~~~~~~~~^~~
+D:\cppserver-linux\c_simple_server\c_server\HttpRequest.c(191,31): warning : conversion to ‘size_t’ {aka ‘long unsigned int’} from ‘long int’ may change the sign of the result [-Wsign-conversion]
+D:\cppserver-linux\c_simple_server\c_server\HttpRequest.c(191,31): warning :   191 |    strncpy(key, start, middle - start);
+D:\cppserver-linux\c_simple_server\c_server\HttpRequest.c(191,31): warning :       |                        ~~~~~~~^~~~~~~
+D:\cppserver-linux\c_simple_server\c_server\HttpRequest.c(194,38): warning : conversion to ‘size_t’ {aka ‘long unsigned int’} from ‘long int’ may change the sign of the result [-Wsign-conversion]
+D:\cppserver-linux\c_simple_server\c_server\HttpRequest.c(194,38): warning :   194 |    char* value = malloc(end-middle-2 + 1);  // 2Ϊ��
+D:\cppserver-linux\c_simple_server\c_server\HttpRequest.c(194,38): warning :       |                         ~~~~~~~~~~~~~^~~
+D:\cppserver-linux\c_simple_server\c_server\HttpRequest.c(195,42): warning : conversion to ‘size_t’ {aka ‘long unsigned int’} from ‘long int’ may change the sign of the result [-Wsign-conversion]
+D:\cppserver-linux\c_simple_server\c_server\HttpRequest.c(195,42): warning :   195 |    strncpy(value, middle+2, end - middle - 2);
+D:\cppserver-linux\c_simple_server\c_server\HttpRequest.c(195,42): warning :       |                             ~~~~~~~~~~~~~^~~
+D:\cppserver-linux\c_simple_server\c_server\HttpRequest.c(460,18): warning : implicit declaration of function ‘sendfile’; did you mean ‘sendFile’? [-Wimplicit-function-declaration]
+D:\cppserver-linux\c_simple_server\c_server\HttpRequest.c(460,18): warning :   460 |   int ret = (int)sendfile(cfd, fd, &offset, (size_t)(size - offset));
+D:\cppserver-linux\c_simple_server\c_server\HttpRequest.c(460,18): warning :       |                  ^~~~~~~~
+D:\cppserver-linux\c_simple_server\c_server\HttpRequest.c(460,18): warning :       |                  sendFile
   HttpResponse.c
-D:\cppserver-linux\c_simple_server\C\HttpResponse.c(12,53): warning : conversion to ‘size_t’ {aka ‘long unsigned int’} from ‘int’ may change the sign of the result [-Wsign-conversion]
-D:\cppserver-linux\c_simple_server\C\HttpResponse.c(12,53): warning :    12 |  response->headers = (struct ResponseHeader*)malloc(size);
-D:\cppserver-linux\c_simple_server\C\HttpResponse.c(12,53): warning :       |                                                     ^~~~
-D:\cppserver-linux\c_simple_server\C\HttpResponse.c(15,27): warning : conversion to ‘size_t’ {aka ‘long unsigned int’} from ‘int’ may change the sign of the result [-Wsign-conversion]
-D:\cppserver-linux\c_simple_server\C\HttpResponse.c(15,27): warning :    15 |  bzero(response->headers, size);
-D:\cppserver-linux\c_simple_server\C\HttpResponse.c(15,27): warning :       |                           ^~~~
+D:\cppserver-linux\c_simple_server\c_server\HttpResponse.c(12,53): warning : conversion to ‘size_t’ {aka ‘long unsigned int’} from ‘int’ may change the sign of the result [-Wsign-conversion]
+D:\cppserver-linux\c_simple_server\c_server\HttpResponse.c(12,53): warning :    12 |  response->headers = (struct ResponseHeader*)malloc(size);
+D:\cppserver-linux\c_simple_server\c_server\HttpResponse.c(12,53): warning :       |                                                     ^~~~
+D:\cppserver-linux\c_simple_server\c_server\HttpResponse.c(15,27): warning : conversion to ‘size_t’ {aka ‘long unsigned int’} from ‘int’ may change the sign of the result [-Wsign-conversion]
+D:\cppserver-linux\c_simple_server\c_server\HttpResponse.c(15,27): warning :    15 |  bzero(response->headers, size);
+D:\cppserver-linux\c_simple_server\c_server\HttpResponse.c(15,27): warning :       |                           ^~~~
   main.c
   PollDispatcher.c
-D:\cppserver-linux\c_simple_server\C\PollDispatcher.c(78,26): warning : conversion from ‘int’ to ‘short int’ may change value [-Wconversion]
-D:\cppserver-linux\c_simple_server\C\PollDispatcher.c(78,26): warning :    78 |    data->fds[i].events = events;
-D:\cppserver-linux\c_simple_server\C\PollDispatcher.c(78,26): warning :       |                          ^~~~~~
-D:\cppserver-linux\c_simple_server\C\PollDispatcher.c(139,26): warning : conversion from ‘int’ to ‘short int’ may change value [-Wconversion]
-D:\cppserver-linux\c_simple_server\C\PollDispatcher.c(139,26): warning :   139 |    data->fds[i].events = events;
-D:\cppserver-linux\c_simple_server\C\PollDispatcher.c(139,26): warning :       |                          ^~~~~~
-D:\cppserver-linux\c_simple_server\C\PollDispatcher.c(156,41): warning : conversion to ‘nfds_t’ {aka ‘long unsigned int’} from ‘int’ may change the sign of the result [-Wsign-conversion]
-D:\cppserver-linux\c_simple_server\C\PollDispatcher.c(156,41): warning :   156 |  int count = poll(data->fds, data->maxfd+1, timeout * 1000); //����Ǻ���
-D:\cppserver-linux\c_simple_server\C\PollDispatcher.c(156,41): warning :       |                              ~~~~~~~~~~~^~
+D:\cppserver-linux\c_simple_server\c_server\PollDispatcher.c(78,26): warning : conversion from ‘int’ to ‘short int’ may change value [-Wconversion]
+D:\cppserver-linux\c_simple_server\c_server\PollDispatcher.c(78,26): warning :    78 |    data->fds[i].events = events;
+D:\cppserver-linux\c_simple_server\c_server\PollDispatcher.c(78,26): warning :       |                          ^~~~~~
+D:\cppserver-linux\c_simple_server\c_server\PollDispatcher.c(139,26): warning : conversion from ‘int’ to ‘short int’ may change value [-Wconversion]
+D:\cppserver-linux\c_simple_server\c_server\PollDispatcher.c(139,26): warning :   139 |    data->fds[i].events = events;
+D:\cppserver-linux\c_simple_server\c_server\PollDispatcher.c(139,26): warning :       |                          ^~~~~~
+D:\cppserver-linux\c_simple_server\c_server\PollDispatcher.c(156,41): warning : conversion to ‘nfds_t’ {aka ‘long unsigned int’} from ‘int’ may change the sign of the result [-Wsign-conversion]
+D:\cppserver-linux\c_simple_server\c_server\PollDispatcher.c(156,41): warning :   156 |  int count = poll(data->fds, data->maxfd+1, timeout * 1000); //����Ǻ���
+D:\cppserver-linux\c_simple_server\c_server\PollDispatcher.c(156,41): warning :       |                              ~~~~~~~~~~~^~
   SelectDispatcher.c
   TcpConnection.c
   TcpServer.c
   ThreadPool.c
-D:\cppserver-linux\c_simple_server\C\ThreadPool.c(12,79): warning : conversion to ‘long unsigned int’ from ‘int’ may change the sign of the result [-Wsign-conversion]
-D:\cppserver-linux\c_simple_server\C\ThreadPool.c(12,79): warning :    12 |  pool->workerThreads = (struct ThreadPool*)malloc(sizeof(struct WorkerThread) * count);
-D:\cppserver-linux\c_simple_server\C\ThreadPool.c(12,79): warning :       |                                                                               ^
-D:\cppserver-linux\c_simple_server\C\ThreadPool.c(12,22): warning : assignment to ‘struct WorkerThread *’ from incompatible pointer type ‘struct ThreadPool *’ [-Wincompatible-pointer-types]
-D:\cppserver-linux\c_simple_server\C\ThreadPool.c(12,22): warning :    12 |  pool->workerThreads = (struct ThreadPool*)malloc(sizeof(struct WorkerThread) * count);
-D:\cppserver-linux\c_simple_server\C\ThreadPool.c(12,22): warning :       |                      ^
-D:\cppserver-linux\c_simple_server\C\ThreadPool.c(53,15): warning : operation on ‘pool->index’ may be undefined [-Wsequence-point]
-D:\cppserver-linux\c_simple_server\C\ThreadPool.c(53,15): warning :    53 |   pool->index = ++pool->index % pool->threadNum;
-D:\cppserver-linux\c_simple_server\C\ThreadPool.c(53,15): warning :       |   ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\cppserver-linux\c_simple_server\c_server\ThreadPool.c(12,79): warning : conversion to ‘long unsigned int’ from ‘int’ may change the sign of the result [-Wsign-conversion]
+D:\cppserver-linux\c_simple_server\c_server\ThreadPool.c(12,79): warning :    12 |  pool->workerThreads = (struct ThreadPool*)malloc(sizeof(struct WorkerThread) * count);
+D:\cppserver-linux\c_simple_server\c_server\ThreadPool.c(12,79): warning :       |                                                                               ^
+D:\cppserver-linux\c_simple_server\c_server\ThreadPool.c(12,22): warning : assignment to ‘struct WorkerThread *’ from incompatible pointer type ‘struct ThreadPool *’ [-Wincompatible-pointer-types]
+D:\cppserver-linux\c_simple_server\c_server\ThreadPool.c(12,22): warning :    12 |  pool->workerThreads = (struct ThreadPool*)malloc(sizeof(struct WorkerThread) * count);
+D:\cppserver-linux\c_simple_server\c_server\ThreadPool.c(12,22): warning :       |                      ^
+D:\cppserver-linux\c_simple_server\c_server\ThreadPool.c(53,15): warning : operation on ‘pool->index’ may be undefined [-Wsequence-point]
+D:\cppserver-linux\c_simple_server\c_server\ThreadPool.c(53,15): warning :    53 |   pool->index = ++pool->index % pool->threadNum;
+D:\cppserver-linux\c_simple_server\c_server\ThreadPool.c(53,15): warning :       |   ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   WorkerThread.c
   正在链接对象
-  C.vcxproj -> D:\cppserver-linux\c_simple_server\C\bin\x64\Debug\c_server.out
+  C.vcxproj -> D:\cppserver-linux\c_simple_server\c_server\bin\x64\Debug\c_server.out

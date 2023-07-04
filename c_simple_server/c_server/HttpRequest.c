@@ -11,6 +11,8 @@
 #include <unistd.h>
 #include <assert.h>
 #include <ctype.h>
+#include <errno.h>
+#include "log.h"
 #define HeaderSize 12
 struct HttpRequest* httpRequestInit()
 {
@@ -400,6 +402,7 @@ bool processHttpRequest(struct HttpRequest* request,struct HttpResponse* respons
 	return false;
 }
 
+
 //要回复http响应的数据块
 void sendFile(const char* filename, struct Buffer* sendBuf, int cfd)
 {
@@ -409,7 +412,7 @@ void sendFile(const char* filename, struct Buffer* sendBuf, int cfd)
 	//判断文件是否打开成功
 	assert(fd > 0); //如果大于0没有问题，若不大于0，程序异常失败
 
-#if 1
+#if 0
 	//读数据
 	while (1)
 	{
@@ -425,6 +428,8 @@ void sendFile(const char* filename, struct Buffer* sendBuf, int cfd)
 			// #ifndef如果没有定义这个宏，下面就是有效的，如果定义了，就是无效的
 #ifndef MSG_SEND_AUTO
 			bufferSendData(sendBuf, cfd);
+
+			
 #endif // !MSG_SEND_AUTO
 			//减慢发送节奏
 			//usleep(10); // 服务器休眠微妙
@@ -447,17 +452,34 @@ void sendFile(const char* filename, struct Buffer* sendBuf, int cfd)
 	//系统函数，发送文件，linux内核提供的sendfile 也能减少拷贝次数
 	// sendfile发送文件效率高，而文件目录使用send
 	//通信文件描述符，打开文件描述符，fd对应的文件偏移量一般为空，
+	//循环发送
+	int count = 0;
 	while (offset < size)
 	{
-		int ret = (int)sendfile(cfd, fd, &offset, (size_t)(size - offset));  //单独单文件出现发送不全，offset会自动修改当前读取位置
-		
-		printf("ret value: %d\n", ret);
+		//int ret = bufferSendFileData(cfd, fd,offset, size);
+		int ret = (int)sendfile(cfd, fd, &offset, (size_t)(size - offset));
 		if (ret == -1 && errno == EAGAIN)
 		{
 			printf("not data ....");
 			perror("sendfile");
 		}
+		count += ret;
+		//Debug("cout: %d,offset:%d",count, offset);
+		
 	}
+	
+		
+	//while (offset < size)
+	//{
+	//	// int ret = (int)sendfile(cfd, fd, &offset, (size_t)(size - offset));  //单独单文件出现发送不全，offset会自动修改当前读取位置
+	//	bufferSendFileData(sendBuf, cfd, fd);
+	//	printf("ret value: %d\n", ret);
+	//	if (ret == -1 && errno == EAGAIN)
+	//	{
+	//		printf("not data ....");
+	//		perror("sendfile");
+	//	}
+	//}
 
 #endif
 	close(fd); //关闭打开的文件

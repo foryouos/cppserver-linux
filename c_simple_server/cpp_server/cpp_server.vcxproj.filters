@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="Buffer.cpp" />
+    <ClCompile Include="Channel.cpp" />
+    <ClCompile Include="EpollDispatcher.cpp" />
+    <ClCompile Include="EventLoop.cpp" />
+    <ClCompile Include="HttpRequest.cpp" />
+    <ClCompile Include="HttpResponse.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="PollDispatcher.cpp" />
+    <ClCompile Include="SelectDispatcher.cpp" />
+    <ClCompile Include="TcpConnection.cpp" />
+    <ClCompile Include="TcpServer.cpp" />
+    <ClCompile Include="ThreadPool.cpp" />
+    <ClCompile Include="WorkerThread.cpp" />
+    <ClCompile Include="Dispatcher.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Buffer.h" />
+    <ClInclude Include="Channel.h" />
+    <ClInclude Include="Dispatcher.h" />
+    <ClInclude Include="EventLoop.h" />
+    <ClInclude Include="HttpRequest.h" />
+    <ClInclude Include="HttpResponse.h" />
+    <ClInclude Include="log.h" />
+    <ClInclude Include="TcpConnection.h" />
+    <ClInclude Include="TcpServer.h" />
+    <ClInclude Include="ThreadPool.h" />
+    <ClInclude Include="WorkerThread.h" />
+    <ClInclude Include="EpollDispatcher.h" />
+    <ClInclude Include="PollDispatcher.h" />
+    <ClInclude Include="SelectDispatcher.h" />
+  </ItemGroup>
+</Project>

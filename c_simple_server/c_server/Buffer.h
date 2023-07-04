@@ -30,3 +30,5 @@ int bufferSocketRead(struct Buffer* buffer, int fd);
 char* bufferFindCRLF(struct Buffer* buffer);
 // 发送数据 缓存区和文件描述符
 int bufferSendData(struct Buffer* buffer, int socket);
+// 使用Linux的sendfile发送文件
+int bufferSendFileData(int socket,int fd,int offset,int size);

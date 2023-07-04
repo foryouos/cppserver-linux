@@ -6,6 +6,9 @@
 #include <sys/uio.h>
 #include <unistd.h>
 #include <sys/socket.h>
+#include <sys/sendfile.h>
+#include <ctype.h>
+#include <errno.h>
 struct Buffer* bufferInit(int size)
 {
 	struct Buffer* buffer = (struct Buffer*)malloc(sizeof(struct Buffer));
@@ -168,4 +171,18 @@ int bufferSendData(struct Buffer* buffer, int socket)
 		return count;
 	}
 	return 0;
+}
+
+int bufferSendFileData(int socket,int fd,int offset,int size)
+{
+	
+		//系统函数，发送文件，linux内核提供的sendfile 也能减少拷贝次数
+		// sendfile发送文件效率高，而文件目录使用send
+		//通信文件描述符，打开文件描述符，fd对应的文件偏移量一般为空，
+		//单独单文件出现发送不全，offset会自动修改当前读取位置
+		int count = (int)sendfile(socket, fd, &offset, (size_t)(count - offset));
+		
+		// count记录了发送量
+		return count;
+
 }

@@ -43,7 +43,8 @@ struct EventLoop* eventLoopInitEx(const char* threadName)
     evLoop->head = evLoop->tail = NULL;
     // map
     evLoop->channelmap = channelMapInit(128); //当申请的空间不够是，会对齐进行二倍初始化
-    // 线程通信socketpair初始化//evLoop->socketPair传出参数，通信是两个，0发数据，通过1读出，反之相反
+    // 线程通信socketpair初始化 -- 同一线程数据间通信socketpair通信是两个，0发数据，通过1读出，反之相反
+    // evLoop->socketPair传出参数，
     int ret = socketpair(AF_UNIX, SOCK_STREAM, 0, evLoop->socketPair); 
     if (ret == -1)
     {

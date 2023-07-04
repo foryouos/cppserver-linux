@@ -1,0 +1,56 @@
+﻿  正在验证源
+  正在将源远程复制到“localhost”
+  正在验证体系结构
+  正在验证体系结构
+  正在启动远程生成
+  正在编译源:
+  Buffer.cpp
+D:\cppserver-linux\c_simple_server\cpp_server\Buffer.cpp(82,19): warning : conversion from ‘size_t’ {aka ‘long unsigned int’} to ‘int’ may change value [-Wconversion]
+D:\cppserver-linux\c_simple_server\cpp_server\Buffer.cpp(82,19): warning :    82 |  int size = strlen(data);
+D:\cppserver-linux\c_simple_server\cpp_server\Buffer.cpp(82,19): warning :       |             ~~~~~~^~~~~~
+D:\cppserver-linux\c_simple_server\cpp_server\Buffer.cpp(106,20): warning : conversion from ‘ssize_t’ {aka ‘long int’} to ‘int’ may change value [-Wconversion]
+D:\cppserver-linux\c_simple_server\cpp_server\Buffer.cpp(106,20): warning :   106 |  int result = readv(fd, vec, 2);
+D:\cppserver-linux\c_simple_server\cpp_server\Buffer.cpp(106,20): warning :       |               ~~~~~^~~~~~~~~~~~
+D:\cppserver-linux\c_simple_server\cpp_server\Buffer.cpp(147,19): warning : conversion from ‘ssize_t’ {aka ‘long int’} to ‘int’ may change value [-Wconversion]
+D:\cppserver-linux\c_simple_server\cpp_server\Buffer.cpp(147,19): warning :   147 |   int count = send(socket, m_data + m_readPos, readable, MSG_NOSIGNAL);
+D:\cppserver-linux\c_simple_server\cpp_server\Buffer.cpp(147,19): warning :       |               ~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  Channel.cpp
+  Dispatcher.cpp
+  EpollDispatcher.cpp
+  EventLoop.cpp
+  HttpRequest.cpp
+D:\cppserver-linux\c_simple_server\cpp_server\HttpRequest.cpp(61,21): warning : conversion from ‘long int’ to ‘int’ may change value [-Wconversion]
+D:\cppserver-linux\c_simple_server\cpp_server\HttpRequest.cpp(61,21): warning :    61 |  int lineSize = end - start;
+D:\cppserver-linux\c_simple_server\cpp_server\HttpRequest.cpp(61,21): warning :       |                 ~~~~^~~~~~~
+D:\cppserver-linux\c_simple_server\cpp_server\HttpRequest.cpp(89,22): warning : conversion from ‘long int’ to ‘int’ may change value [-Wconversion]
+D:\cppserver-linux\c_simple_server\cpp_server\HttpRequest.cpp(89,22): warning :    89 |   int lineSize = end - start;
+D:\cppserver-linux\c_simple_server\cpp_server\HttpRequest.cpp(89,22): warning :       |                  ~~~~^~~~~~~
+D:\cppserver-linux\c_simple_server\cpp_server\HttpRequest.cpp(94,24): warning : conversion from ‘long int’ to ‘int’ may change value [-Wconversion]
+D:\cppserver-linux\c_simple_server\cpp_server\HttpRequest.cpp(94,24): warning :    94 |    int keyLen = middle - start;
+D:\cppserver-linux\c_simple_server\cpp_server\HttpRequest.cpp(94,24): warning :       |                 ~~~~~~~^~~~~~~
+D:\cppserver-linux\c_simple_server\cpp_server\HttpRequest.cpp(95,32): warning : conversion from ‘long int’ to ‘int’ may change value [-Wconversion]
+D:\cppserver-linux\c_simple_server\cpp_server\HttpRequest.cpp(95,32): warning :    95 |    int valueLen = end - middle - 2;
+D:\cppserver-linux\c_simple_server\cpp_server\HttpRequest.cpp(95,32): warning :       |                   ~~~~~~~~~~~~~^~~
+D:\cppserver-linux\c_simple_server\cpp_server\HttpRequest.cpp(427,21): warning : conversion from ‘long int’ to ‘int’ may change value [-Wconversion]
+D:\cppserver-linux\c_simple_server\cpp_server\HttpRequest.cpp(427,21): warning :   427 |  int length = space - start;
+D:\cppserver-linux\c_simple_server\cpp_server\HttpRequest.cpp(427,21): warning :       |               ~~~~~~^~~~~~~
+  HttpResponse.cpp
+  main.cpp
+  PollDispatcher.cpp
+D:\cppserver-linux\c_simple_server\cpp_server\PollDispatcher.cpp(47,22): warning : conversion from ‘int’ to ‘short int’ may change value [-Wconversion]
+D:\cppserver-linux\c_simple_server\cpp_server\PollDispatcher.cpp(47,22): warning :    47 |    m_fds[i].events = events;
+D:\cppserver-linux\c_simple_server\cpp_server\PollDispatcher.cpp(47,22): warning :       |                      ^~~~~~
+D:\cppserver-linux\c_simple_server\cpp_server\PollDispatcher.cpp(106,22): warning : conversion from ‘int’ to ‘short int’ may change value [-Wconversion]
+D:\cppserver-linux\c_simple_server\cpp_server\PollDispatcher.cpp(106,22): warning :   106 |    m_fds[i].events = events;
+D:\cppserver-linux\c_simple_server\cpp_server\PollDispatcher.cpp(106,22): warning :       |                      ^~~~~~
+  SelectDispatcher.cpp
+  TcpConnection.cpp
+  TcpServer.cpp
+  ThreadPool.cpp
+D:\cppserver-linux\c_simple_server\cpp_server\ThreadPool.cpp(60,11): warning : operation on ‘((ThreadPool*)this)->ThreadPool::m_index’ may be undefined [-Wsequence-point]
+D:\cppserver-linux\c_simple_server\cpp_server\ThreadPool.cpp(60,11): warning :    60 |   m_index = ++m_index % m_threadNum;
+D:\cppserver-linux\c_simple_server\cpp_server\ThreadPool.cpp(60,11): warning :       |   ~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~
+  WorkerThread.cpp
+D:\cppserver-linux\c_simple_server\cpp_server\WorkerThread.cpp(42,1): warning : no return statement in function returning non-void [-Wreturn-type]
+  正在链接对象
+  cpp_server.vcxproj -> D:\cppserver-linux\c_simple_server\cpp_server\bin\x64\Debug\cpp_server.out
